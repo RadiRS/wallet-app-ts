@@ -6,6 +6,7 @@ import {colors} from '../themes/colors';
 
 import background from '../assets/background-img/welcome-bg.png';
 import AppText from '../components/text';
+import AppButton from '../components/button';
 
 const WelcomeScreen: FC = () => {
   return (
@@ -22,6 +23,7 @@ const WelcomeScreen: FC = () => {
           <AppText size="sm" style={styles.subTitle}>
             Best payment methjod, connects your money to your firends & family.
           </AppText>
+          <AppButton>Get Started</AppButton>
         </View>
       </Container>
     </>
@@ -48,6 +50,7 @@ const styles = StyleSheet.create({
     width: '100%',
     flex: 1,
     padding: 25,
+    justifyContent: 'flex-end',
   },
   title: {
     width: '70%',
