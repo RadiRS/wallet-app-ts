@@ -17,22 +17,25 @@ const CardItem: FC<CardProps> = ({accountNo, id, balance}: CardProps) => {
 
   return (
     <ImageBackground source={background} style={styles.background}>
-      <TouchableOpacity onPress={onPress} style={styles.touch}>
+      <TouchableOpacity
+        onPress={onPress}
+        style={styles.touch}
+        activeOpacity={0.9}>
         <View style={styles.view}>
           <View style={styles.row}>
             <AppText color={colors.white}>{`******${accountNo.slice(
               6,
               10,
             )}`}</AppText>
-            <AppText>{balance}</AppText>
           </View>
+
           <View style={styles.row}>
-            <AppText size="sm" color={colors.graylight}>
-              Total balance
-            </AppText>
-            <AppText size="sm" color={colors.graylight}>
-              ${balance}
-            </AppText>
+            <View>
+              <AppText size="sm" color={colors.graylight}>
+                Total balance
+              </AppText>
+              <AppText color={colors.graylight}>${balance}</AppText>
+            </View>
           </View>
         </View>
       </TouchableOpacity>

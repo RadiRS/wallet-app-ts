@@ -1,12 +1,14 @@
 import React, {FC} from 'react';
 import {StatusBar, StyleSheet} from 'react-native';
-import CardSection from '../components/cards/card-section';
+import CardSection, {CardProps} from '../components/cards/card-section';
 
 import {Container} from '../components/shared';
+import TransactionSection from '../components/transactions/transaction-section';
+import {TransactionProps} from '../components/transactions/types';
 import {colors} from '../themes/colors';
 
 const HomeScreen: FC = () => {
-  const cardsData: any[] = [
+  const cardsData: Array<CardProps> = [
     {
       id: 1,
       accountNo: '34242352323',
@@ -24,10 +26,36 @@ const HomeScreen: FC = () => {
     },
   ];
 
+  const transactionData: Array<TransactionProps> = [
+    {
+      id: 1,
+      amount: '-$93.00',
+      date: '14 Ags 2022',
+      title: 'Pulsa',
+      subtitle: 'Paket',
+      art: {
+        background: colors.primary,
+        icon: 'phone',
+      },
+    },
+    {
+      id: 2,
+      amount: '-$13.00',
+      date: '14 Ags 2022',
+      title: 'Car',
+      subtitle: 'Gojek',
+      art: {
+        background: colors.primary,
+        icon: 'car',
+      },
+    },
+  ];
+
   return (
     <Container style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.graylight} />
       <CardSection data={cardsData} />
+      <TransactionSection data={transactionData} />
     </Container>
   );
 };
