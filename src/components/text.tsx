@@ -1,14 +1,15 @@
 import React, {FC, ReactNode} from 'react';
-import {StyleProp, StyleSheet, Text, TextStyle} from 'react-native';
+import {ColorValue, StyleProp, StyleSheet, Text, TextStyle} from 'react-native';
 import {colors} from '../themes/colors';
 
 interface TextProps {
   children?: ReactNode;
   size?: String;
   style?: StyleProp<TextStyle>;
+  color?: ColorValue;
 }
 
-const AppText: FC<TextProps> = ({children, size, style}: TextProps) => {
+const AppText: FC<TextProps> = ({children, size, style, color}: TextProps) => {
   const extSizeStyle =
     size === 'sm'
       ? styles.smallText
@@ -16,7 +17,9 @@ const AppText: FC<TextProps> = ({children, size, style}: TextProps) => {
       ? styles.bigText
       : styles.regularText;
 
-  return <Text style={[extSizeStyle, style]}>{children}</Text>;
+  const extColor = color ? {color: color} : {};
+
+  return <Text style={[extSizeStyle, extColor, style]}>{children}</Text>;
 };
 
 const styles = StyleSheet.create({
