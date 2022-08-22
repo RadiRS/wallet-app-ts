@@ -1,8 +1,9 @@
 import React from 'react';
-import WelcomeScreen from './src/screens/welcome.screen';
+
+import RootStack from './src/navigators/root-stack';
 
 const App = () => {
-  return <WelcomeScreen />;
+  return <RootStack />;
 };
 
 export default App;
