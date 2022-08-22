@@ -1,10 +1,10 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, ReactNode} from 'react';
 
 import {Dimensions, StyleSheet, View} from 'react-native';
 import {colors} from '../themes/colors';
 
 interface ContainerProps {
-  children: any;
+  children: ReactNode;
   style?: {};
 }
 
