@@ -8,7 +8,12 @@ import background from '../assets/background-img/welcome-bg.png';
 import AppText from '../components/text';
 import AppButton from '../components/button';
 
-const WelcomeScreen: FC = () => {
+import {RootStackParamList} from '../navigators/root-stack';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+type Props = NativeStackScreenProps<RootStackParamList, 'Welcome'>;
+
+const WelcomeScreen: FC<Props> = ({navigation}) => {
   return (
     <>
       <StatusBar barStyle="light-content" backgroundColor={colors.secondary} />
@@ -23,7 +28,9 @@ const WelcomeScreen: FC = () => {
           <AppText size="sm" style={styles.subTitle}>
             Best payment methjod, connects your money to your firends & family.
           </AppText>
-          <AppButton>Get Started</AppButton>
+          <AppButton onPress={() => navigation.navigate('Home')}>
+            Get Started
+          </AppButton>
         </View>
       </Container>
     </>

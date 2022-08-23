@@ -10,7 +10,12 @@ import {TransactionProps} from '../components/transactions/types';
 import {colors} from '../themes/colors';
 import avatar from '../assets/background-img/avatar.png';
 
-const HomeScreen: FC = () => {
+import {RootStackParamList} from '../navigators/root-stack';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+export type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+
+const HomeScreen: FC<Props> = () => {
   const cardsData: Array<CardProps> = [
     {
       id: 1,

@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     flex: 1,
     justifyContent: 'center',
+    paddingHorizontal: 10,
   },
   mainText: {
     color: colors.secondary,

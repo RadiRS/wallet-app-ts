@@ -12,8 +12,14 @@ import {colors} from '../../themes/colors';
 import background from '../../assets/background-img/welcome-bg.png';
 import AppText from '../text';
 
-const CardItem: FC<CardProps> = ({accountNo, id, balance}: CardProps) => {
-  const onPress = () => id;
+import {Props as HomeProps} from '../../screens/home.screen';
+import {useNavigation} from '@react-navigation/native';
+
+const CardItem: FC<CardProps> = ({accountNo, balance, id}: CardProps) => {
+  const navigation = useNavigation<HomeProps['navigation']>();
+
+  const onPress = () =>
+    navigation.navigate('Balance', {accountNo, balance, id});
 
   return (
     <ImageBackground source={background} style={styles.background}>

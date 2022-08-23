@@ -29,7 +29,7 @@ const RootStack: FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Balance"
+        initialRouteName="Welcome"
         screenOptions={{
           headerStyle: {backgroundColor: colors.graylight},
           headerShadowVisible: false,
@@ -57,13 +57,13 @@ const RootStack: FC = () => {
                 {...props}
               />
             ),
-            headerLeft: () => null,
+            headerBackVisible: false,
           }}
         />
         <Stack.Screen
           name="Balance"
           component={BalanceScreen}
-          options={({route}) => ({
+          options={({route, navigation}) => ({
             headerTitle: route?.params?.alias,
             headerTitleAlign: 'center',
             headerLeft: props => (
@@ -72,6 +72,7 @@ const RootStack: FC = () => {
                 name="chevron-back"
                 size={25}
                 colors={colors.secondary}
+                onPress={() => navigation.goBack()}
               />
             ),
           })}
