@@ -35,7 +35,7 @@ const HomeScreen: FC = () => {
       subtitle: 'Paket',
       art: {
         background: colors.primary,
-        icon: 'phone',
+        icon: 'phone-portrait-outline',
       },
     },
     {
@@ -45,7 +45,18 @@ const HomeScreen: FC = () => {
       title: 'Car',
       subtitle: 'Gojek',
       art: {
-        background: colors.primary,
+        background: colors.accent,
+        icon: 'car-outline',
+      },
+    },
+    {
+      id: 3,
+      amount: '-$14.00',
+      date: '13 Ags 2022',
+      title: 'Car',
+      subtitle: 'Grab',
+      art: {
+        background: colors.tertiary,
         icon: 'car',
       },
     },

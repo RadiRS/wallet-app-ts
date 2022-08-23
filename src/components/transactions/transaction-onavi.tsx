@@ -1,13 +1,14 @@
 import {View, StyleSheet} from 'react-native';
 import React, {FC} from 'react';
-import {TransactionAviProps} from './types';
-import AppText from '../text';
-import {colors} from '../../themes/colors';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-const TransactionAvi: FC<TransactionAviProps> = ({background}) => {
+import {TransactionAviProps} from './types';
+
+const TransactionAvi: FC<TransactionAviProps> = ({background, icon}) => {
+  console.log(icon);
   return (
     <View style={[styles.container, {backgroundColor: background}]}>
-      <AppText color={colors.white}>X</AppText>
+      <Icon size={20} name={icon} />
     </View>
   );
 };

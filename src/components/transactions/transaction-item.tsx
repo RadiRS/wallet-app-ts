@@ -16,7 +16,7 @@ const TransactionItem: FC<TransactionProps> = ({
   return (
     <View style={styles.row}>
       <View style={styles.left}>
-        <TransactionAvi background={art.background} />
+        <TransactionAvi background={art.background} icon={art.icon} />
         <View style={styles.ml}>
           <AppText color={colors.secondary}>{title}</AppText>
           <AppText size="sm" color={colors.graydark}>

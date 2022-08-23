@@ -9,3 +9,6 @@ declare module '*.jpg' {
   const value: any;
   export = value;
 }
+
+// This config to fixed any type vector icons error
+declare module 'react-native-vector-icons/Ionicons';
