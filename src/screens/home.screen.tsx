@@ -1,11 +1,14 @@
 import React, {FC} from 'react';
 import {StatusBar, StyleSheet} from 'react-native';
 import CardSection, {CardProps} from '../components/cards/card-section';
+import SendMoneySection from '../components/send-money/send-money-section';
+import {SendMoneyProps} from '../components/send-money/types';
 
 import {Container} from '../components/shared';
 import TransactionSection from '../components/transactions/transaction-section';
 import {TransactionProps} from '../components/transactions/types';
 import {colors} from '../themes/colors';
+import avatar from '../assets/background-img/avatar.png';
 
 const HomeScreen: FC = () => {
   const cardsData: Array<CardProps> = [
@@ -62,11 +65,36 @@ const HomeScreen: FC = () => {
     },
   ];
 
+  const sendMoneyData: Array<SendMoneyProps> = [
+    {
+      id: 1,
+      amount: '22323.4',
+      name: 'Abdul Badar',
+      background: colors.tertiary,
+      img: avatar,
+    },
+    {
+      id: 2,
+      amount: '3445.33',
+      name: 'Firman Safir',
+      background: colors.primary,
+      img: avatar,
+    },
+    {
+      id: 3,
+      amount: '9884.2',
+      name: 'Rahmat Salam',
+      background: colors.accent,
+      img: avatar,
+    },
+  ];
+
   return (
     <Container style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.graylight} />
       <CardSection data={cardsData} />
       <TransactionSection data={transactionData} />
+      <SendMoneySection data={sendMoneyData} />
     </Container>
   );
 };

@@ -5,7 +5,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {TransactionAviProps} from './types';
 
 const TransactionAvi: FC<TransactionAviProps> = ({background, icon}) => {
-  console.log(icon);
   return (
     <View style={[styles.container, {backgroundColor: background}]}>
       <Icon size={20} name={icon} />
