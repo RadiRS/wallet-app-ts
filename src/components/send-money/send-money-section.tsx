@@ -16,8 +16,10 @@ const SendMoneySection: FC<SendMoneySectionProps> = ({data}) => {
     <View style={styles.sendMoneySectionBackground}>
       <View style={[styles.sendMoneyRow, styles.mb]}>
         <AppText color={colors.secondary}>Send money to</AppText>
-
-        <TouchableOpacity style={styles.textButton} onPress={onPressAdd}>
+        <TouchableOpacity
+          style={styles.textButton}
+          onPress={onPressAdd}
+          activeOpacity={0.8}>
           <AppText size="sm" color={colors.tertiary}>
             +Add
           </AppText>
