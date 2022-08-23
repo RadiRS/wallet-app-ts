@@ -1,5 +1,7 @@
 # Wallet App
 
+![Banner](preview.gif)
+
 This is mobile app for tracking your money transaction
 
 ## Getting Started
@@ -37,8 +39,6 @@ yarn android   //android
 yarn ios       //ios
 ```
 
-### Demo
-
 ## Running the tests
 
 ### Break down into end to end tests
@@ -63,8 +63,6 @@ yarn build-android
 
 - [React Native](https://facebook.github.io/react-native/)
 - [React Navigation](https://reactnavigation.org/)
-- [Redux](https://redux.js.org/)
-- [Jest](https://jestjs.io)
 
 ## Authors
 

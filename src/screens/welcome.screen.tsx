@@ -14,6 +14,13 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 type Props = NativeStackScreenProps<RootStackParamList, 'Welcome'>;
 
 const WelcomeScreen: FC<Props> = ({navigation}) => {
+  const onPressStarted = () => {
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'Home'}],
+    });
+  };
+
   return (
     <>
       <StatusBar barStyle="light-content" backgroundColor={colors.secondary} />
@@ -28,9 +35,7 @@ const WelcomeScreen: FC<Props> = ({navigation}) => {
           <AppText size="sm" style={styles.subTitle}>
             Best payment methjod, connects your money to your firends & family.
           </AppText>
-          <AppButton onPress={() => navigation.navigate('Home')}>
-            Get Started
-          </AppButton>
+          <AppButton onPress={onPressStarted}>Get Started</AppButton>
         </View>
       </Container>
     </>
